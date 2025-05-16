@@ -38,5 +38,4 @@ A simple web-based task management application with automated GitHub workflows a
 
 1. Clone the repository:
     ```bash
-    
-
+    git clone https://github.com/DalondaIkhimokpaGitHub-Workflows-Task-Tracker.git    ```
