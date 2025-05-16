@@ -58,12 +58,14 @@ Local Development Clone the repository
 - [Live Server Extension](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)
 
 ## 💻 Development Commands
-   Command Action:
+   1.Command Action:
+   ```bash
     git clone [url]	Clone the repository,
     open index.html	Run locally (Mac),
     git push origin main,	
-    Update remote repo, git clone [url]    ```  
+    Update remote repo, git clone [url]
 
+ ```
   
 ## 🌐 Accessing the App
 
