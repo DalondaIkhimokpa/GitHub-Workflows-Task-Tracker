@@ -13,7 +13,7 @@ A simple web-based task management application with automated GitHub workflows a
 
 ##📀 Trask Tracker Demo Video
 
-➡️[click here] Comming Soon
+➡️[click here] Demo Comming Soon
 
 ## ✨Features
 
