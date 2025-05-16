@@ -1,25 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Task Tracker</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div class="container">
-      <h1>Task Tracker</h1>
-      <form id="task-form">
-        <div class="form-control">
-          <label for="task">New Task</label>
-          <input type="text" id="task" placeholder="Enter task...">
-        </div>
-        <button type="submit" class="btn">Add Task</button>
-      </form>
-      <ul id="tasks">
-        <!-- Tasks will be added here dynamically -->
-      </ul>
+<head>
+  <header class="app-header">
+    <div class="logo-wrapper">
+      <img src="/assets/images/GITLOGO.png" 
+           alt="My Task Tracker Logo" 
+           class="app-logo">
+      <h1 class="app-title">Task Tracker Demo</h1>
     </div>
-    <script src="script.js"></script>
-  </body>
+  </header>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task Tracker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Task Tracker</h1>
+    <form id="task-form">
+      <div class="form-control">
+        <label for="task">New Task</label>
+        <input type="text" id="task" placeholder="Enter task...">
+      </div>
+      <button type="submit" class="btn">Add Task</button>
+    </form>
+    <ul id="tasks">
+      <!-- Tasks will appear here dynamically -->
+    </ul>
+  </div>
+  <script src="script.js"></script>
+</body>
 </html>
