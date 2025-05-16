@@ -59,7 +59,7 @@ Local Development Clone the repository
 
 ## 💻 Development Commands
 - Command Action:
- ```bash
+
     git clone [url]	Clone the repository 
     open index.html	Run locally (Mac) 
     git push origin main	
