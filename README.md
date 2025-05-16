@@ -37,7 +37,7 @@ A simple web-based task management application with automated GitHub workflows a
 - Merge back to main when complete
 - Create hotfix branches for urgent fixes
 - Merge hotfixes directly to main
-- Created Gitignore
+- Create Gitignore
 
 ## ⚙️ Installation
 
