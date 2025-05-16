@@ -7,6 +7,8 @@ A simple web-based task management application with automated GitHub workflows a
 ## 📸Task Tracker Screenshot
 [screenshots](/assets/screenshots/Screenshot%202025-05-16%20at%207.11.37 AM.png)
 [screenshots](/assets/screenshots/Screenshot%202025-05-16%20at%208.52.04 AM.png)
+[screenshots](/assets/screenshots/Screenshot%202025-05-16%20at%209.39.44 AM.png)
+[screenshots](/assets/screenshots/Screenshot%202025-05-16%20at%209.39.35 AM.png)
 
 ## Features ✨
 - Add new tasks with automatic sequential numbering
