@@ -79,3 +79,145 @@ form {
 .btn:hover {
   background-color: #0056b3;
 }
+.btn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+.btn:disabled:hover {
+  background-color: #ccc;
+}
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 20px;
+}
+.container {
+  max-width: 600px;
+  margin: auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+h1 {
+  text-align: center;
+  color: #333;
+}
+ul {
+  list-style: none;
+  padding: 0;
+}
+li {
+  background: #f9f9f9;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 5px;
+}
+li:hover {
+  background: #e9e9e9;
+}
+.form-control {
+  margin-bottom: 20px;
+}
+.form-control label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+.form-control input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.form-control input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+.form-control input.error {
+  border-color: red;
+}
+.form-control input.success {
+  border-color: green;
+}
+.form-control .error-message {
+  color: red;
+  font-size: 0.9em;
+  margin-top: 5px;
+}
+.form-control .success-message {
+  color: green;
+  font-size: 0.9em;
+  margin-top: 5px;
+}
+.btn {
+  background: #007bff;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+}
+.btn:hover {
+  background: #0056b3;
+}
+.btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+.btn:disabled:hover {
+  background: #ccc;
+}
+/* Responsive Styles */
+@media (max-width: 600px) {
+  .container {
+    width: 90%;
+    padding: 15px;
+  }
+  h1 {
+    font-size: 1.5em;
+  }
+  .btn {
+    font-size: 0.9em;
+  }
+}
+.delete-btn {
+  margin-left: 10px;
+  background: #ff4444;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  float: right;
+}
+
+.delete-btn:hover {
+  background: #cc0000;
+}
+
+li {
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+}
+.task-text {
+  display: inline-block;
+  width: calc(100% - 30px);
+}
+
+.delete-btn {
+  background: #ff4444;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  float: right;
+}
+
+.delete-btn:hover {
+  background: #cc0000;
+}
