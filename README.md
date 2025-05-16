@@ -59,11 +59,9 @@ Local Development Clone the repository
 
 ## 💻 Development Commands
 
-    Command Action:
-- git clone [url]	Clone the repository
-- open index.html	Run locally (Mac)
-- git push origin main	Update remote repo '''
+    Command Action: git clone [url]	Clone the repository, open index.html	Run locally (Mac), git push origin main	Update remote repo, git clone [url]    ```  
 
+  
 ## 🌐 Accessing the App
 
 Once running, use the app by:
