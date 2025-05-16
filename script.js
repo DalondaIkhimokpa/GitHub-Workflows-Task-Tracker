@@ -17,15 +17,15 @@ function addTask(text) {
   const li = document.createElement('li');
   const taskNumber = taskCounter++;
   
-  // Create text span
+  // Task text with number
   const textSpan = document.createElement('span');
   textSpan.className = 'task-text';
   textSpan.textContent = `Task ${taskNumber}: ${text}`;
   
-  // Create delete button
+  // Red delete button
   const deleteBtn = document.createElement('button');
   deleteBtn.className = 'delete-btn';
-  deleteBtn.textContent = '×';
+  deleteBtn.innerHTML = '&times;'; // Using HTML entity for ×
   deleteBtn.addEventListener('click', () => {
     li.remove();
     updateTaskNumbers();
@@ -46,5 +46,5 @@ function updateTaskNumbers() {
   taskCounter = tasks.length + 1;
 }
 
-// Initialize
+// Initialize numbering
 updateTaskNumbers();
