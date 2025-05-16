@@ -37,6 +37,7 @@ A simple web-based task management application with automated GitHub workflows a
 - Merge back to main when complete
 - Create hotfix branches for urgent fixes
 - Merge hotfixes directly to main
+- Created Gitignore
 
 ## ⚙️ Installation
 
@@ -58,17 +59,19 @@ Local Development Clone the repository
 - [Live Server Extension](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)
 
 ## 💻 Development Commands
+
    1.Command Action:
-   ```bash
+
+```bash
    git clone [url]
    Clone the repository
    open index.html
    Run locally (Mac)
-   git push origin main	
+   git push origin main
    Update remote repo
 
- ```
-  
+```
+
 ## 🌐 Accessing the App
 
 Once running, use the app by:
