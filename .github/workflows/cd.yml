@@ -2,7 +2,9 @@ name: Continuous Deployment
 
 on:
   workflow_run:
-    workflows: ["CI Demo"]
+    workflows: ["Continous Integration"]
+    # This workflow will run when the CI workflow is completed
+    # The workflow_run event is triggered when a workflow run is completed
     types: [completed]
 
 jobs:
