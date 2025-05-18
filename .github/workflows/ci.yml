@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Print a message
-        run: echo "✅ CI is working! (This ran because you pushed code)"
+        run: echo "✅ CI is working Fine! (This ran because you pushed code)"
         
       - name: Count files
         run: |

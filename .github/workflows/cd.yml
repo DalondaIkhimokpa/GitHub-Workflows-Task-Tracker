@@ -13,6 +13,6 @@ jobs:
     steps:
       - name: Print completion
         run: |
-          echo "🎉 CD triggered because CI finished!"
+          echo "🎉 CD triggered because CI finished!" (Job Done!)
           echo "This would deploy your app in real projects"
           echo "Workflow result: ${{ github.event.workflow_run.conclusion }}"
