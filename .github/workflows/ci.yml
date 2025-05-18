@@ -1,22 +1,22 @@
-name: Continous Integration 
+name: CI - Feature Login
 
-on: [push]  # Runs on any push
+on:
+  push:
+    branches: [feature/login]
+  pull_request:
+    branches: [main]
 
 jobs:
-  checklist:
+  validate-feature:
     runs-on: ubuntu-22.04
+
     steps:
-      - name: Print a message
-        run: echo "✅ CI is working Fine! (This ran because you pushed code)"
-        
-      - name: Count files
+      - uses: actions/checkout@v4
+
+      - name: Check login files
         run: |
-          echo "This repo has $(find . -type f | wc -l) files"
-          echo "Files list:" >> file-report.txt
-          find . -type f >> file-report.txt
-          
-      - name: Save report
-        uses: actions/upload-artifact@v3.1.3
-        with:
-          name: ci-report
-          path: file-report.txt
+          [ -f login.html ] || { echo "Missing login.html"; exit 1; }
+          [ -f login.css ] || { echo "Missing login.css"; exit 1; }
+
+      - name: Success message
+        run: echo "CI for feature/login passed ✅"

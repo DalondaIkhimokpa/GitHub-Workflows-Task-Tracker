@@ -1,18 +1,22 @@
-name: Continuous Deployment
+name: CD - Feature Login
 
 on:
   workflow_run:
-    workflows: ["Continous Integration"]
-    # This workflow will run when the CI workflow is completed
-    # The workflow_run event is triggered when a workflow run is completed
+    workflows: ["CI - Feature Login"]
     types: [completed]
 
 jobs:
-  celebrate:
+  deploy-feature:
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-22.04
+
     steps:
-      - name: Print completion
+      - uses: actions/checkout@v4
+
+      - name: Simulate deployment for feature/login
         run: |
-          echo "🎉 CD triggered because CI finished!" (Job Done!)
-          echo "This would deploy your app in real projects"
-          echo "Workflow result: ${{ github.event.workflow_run.conclusion }}"
+          echo "Deploying FEATURE/LOGIN branch..."
+          echo "✅ Feature login deployment complete!" > deploy-feature.log
+
+      - name: Show deployment log
+        run: cat deploy-feature.log
