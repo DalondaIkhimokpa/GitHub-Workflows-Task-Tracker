@@ -1,4 +1,4 @@
-name: Coninuous Integration - Feature Login
+name: Coninuous Integration 
 # This workflow is triggered on push to the feature/login branch and on pull requests to the main branch.
 
 on:

@@ -1,4 +1,4 @@
-name: Continuous Deployment- Feature Login
+name: Continuous Deployment
 # This workflow is triggered by the completion of the CI workflow for the feature/login branch.
 
 on:
