@@ -1,0 +1,16 @@
+name: Hello Today Workflow
+# This workflow is triggered on pushes to the feature/login branch and can also be manually triggered.
+# It prints a success message with the branch name.
+
+on:
+  push:
+    branches: [feature/login]
+  workflow_dispatch: # Allows manual triggering of the workflow
+  pull_request:
+    branches: [feature/login] # Triggers on pull requests to the feature/login branch    
+jobs:
+  test:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Print success message
+        run: 'echo "🎉 FINALLY WORKING! Branch: $GITHUB_REF_NAME"'
