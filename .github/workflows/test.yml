@@ -10,4 +10,4 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - name: Print success message
-        run: echo "🎉 FINALLY WORKING! Branch: $GITHUB_REF_NAME"
+        run: 'echo "🎉 FINALLY WORKING! Branch: $GITHUB_REF_NAME"'
