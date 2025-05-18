@@ -1,0 +1,13 @@
+name: TEST Workflow
+
+on:
+  push:
+    branches: [feature/login]
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Print success message
+        run: echo "🎉 FINALLY WORKING! Branch: $GITHUB_REF_NAME"
