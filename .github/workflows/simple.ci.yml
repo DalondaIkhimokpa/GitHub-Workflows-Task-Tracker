@@ -2,15 +2,16 @@ name: Simple CI
 
 on:
   push:
-    branches: [feature/login]
+    branches:
+      - feature/*
+  pull_request:
+    branches: [feature/*]
 
 jobs:
-  say-hello:
-    runs-on: ubuntu-latest
+  run-ci:
+    runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v4
-      
-      - name: Print a message
-        run: |
-          echo "✅ This is a simple workflow."
-          echo "Branch: ${{ github.ref_name }}"
+
+      - name: Print CI message
+        run: echo "✅ CI is working on ${{ github.ref_name }} branch!"
