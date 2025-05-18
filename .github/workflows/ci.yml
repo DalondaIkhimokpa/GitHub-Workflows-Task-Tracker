@@ -1,23 +1,14 @@
-name: Coninuous Integration 
-# This workflow is triggered on push to the feature/login branch and on pull requests to the main branch.
+name: Simple CI
 
-on:
-  push:
-    branches: [feature/login]
-  pull_request:
-    branches: [main]
+on: [push]
 
 jobs:
-  validate-feature:
-    runs-on: ubuntu-22.04
-
+  say-hello:
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
-      - name: Check login files
+      
+      - name: Print a message
         run: |
-          [ -f login.html ] || { echo "Missing login.html"; exit 1; }
-          [ -f login.css ] || { echo "Missing login.css"; exit 1; }
-
-      - name: Success message
-        run: echo "CI for feature/login passed ✅"
+          echo "✅ This is a simple workflow."
+          echo "Branch: ${{ github.ref_name }}"

@@ -1,23 +1,17 @@
-name: Continuous Deployment
-# This workflow is triggered by the completion of the CI workflow for the feature/login branch.
+name: Simple CD
 
 on:
   workflow_run:
-    workflows: ["CI - Feature Login"]
-    types: [completed]
+    workflows: ["Simple CI"]
+    types:
+      - completed
 
 jobs:
-  deploy-feature:
+  deploy:
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
-    runs-on: ubuntu-22.04
-
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-
-      - name: Simulate deployment for feature/login
+      - name: Print CD message
         run: |
-          echo "Deploying FEATURE/LOGIN branch..."
-          echo "✅ Feature login deployment complete!" > deploy-feature.log
-
-      - name: Show deployment log
-        run: cat deploy-feature.log
+          echo "🚀 CD triggered because CI succeeded on branch: ${{ github.event.workflow_run.head_branch }}"
+      
