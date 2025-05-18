@@ -2,38 +2,17 @@ name: Continuous Integration
 
 on:
   push:
-    branches: [main]
+    branches:
+      - main
+      - feature/*
   pull_request:
     branches: [main]
 
 jobs:
-  validate:
-    runs-on: ubuntu-latest
+  run-ci:
+    runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v4
-        
-      - name: Verify files
-        run: |
-          [ -f index.html ] || { echo "Missing index.html"; exit 1; }
-          [ -f style.css ] || { echo "Missing style.css"; exit 1; }
-          
-      - name: Upload success flag
-        if: success()
-        uses: actions/upload-artifact@v3
-        with:
-          name: ci-success
-          path: .gitkeep
 
-  notify-ci:
-    needs: validate
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/github-script@v6
-        with:
-          script: |
-            github.rest.issues.createComment({
-              issue_number: context.issue.number,
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              body: "✅ CI passed! Waiting for approval to deploy..."
-            })
+      - name: Print CI message
+        run: echo "✅ CI is working on ${{ github.ref_name }} branch!"

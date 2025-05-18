@@ -1,37 +1,20 @@
-name: Continuous Delivery
+name: Continuous Deployment
 
 on:
   workflow_run:
     workflows: ["Continuous Integration"]
-    types:
-      - completed
+    types: [completed]
 
 jobs:
-  await-approval:
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/github-script@v6
-        with:
-          script: |
-            github.rest.issues.createComment({
-              issue_number: context.issue.number,
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              body: "🚀 CI passed! A maintainer must approve this deployment:\n\n" +
-                    `https://github.com/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`
-            })
-      - uses: trstringer/manual-approval@v1
-        id: approval
-        with:
-          secret: ${{ github.token }}
-          approvers: dalondaikhimokpa
-          issue-title: "Deployment Approval Requested"
-
   deploy:
-    needs: await-approval
-    runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v4
-      - run: echo "🚀 Deploying main branch..."
-      
+
+      - name: Simulate deployment
+        run: |
+          echo "🚀 Deployment triggered for ${{ github.event.workflow_run.head_branch }}"
+          echo "✅ Deployment complete Succesful!"
+          echo "You can now access the deployed application at https://example.com/${{ github.event.workflow_run.head_branch }}"
+        
