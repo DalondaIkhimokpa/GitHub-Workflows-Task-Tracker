@@ -7,5 +7,7 @@ jobs:
         runs-on: ubuntu-22.04
         steps:
             - name: Print Hello World
-              run: echo "Hello, World Test!"
+              run: echo "Hello, World Test 1!"
+            - name: Print Hello World
+              run: echo "Hello, World Test 2!"
             
