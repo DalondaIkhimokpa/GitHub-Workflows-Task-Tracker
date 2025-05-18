@@ -13,9 +13,10 @@ A simple web-based task management application with automated GitHub workflows a
 
 ## 📀Trask Tracker Demo Video
 
-➡️[click here] Demo Comming Soon
+➡️[click here] Demo Comming 
 
 ## 📝Task Traker Deployment Vercel
+
 ➡️[click here] https://git-hub-workflows-task-tracker.vercel.app/
 
 ## ✨Features
