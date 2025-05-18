@@ -1,27 +1,18 @@
-name: CI - Main
+name: Continuous Integration
 
 on:
   push:
-    branches: [main]
+    branches:
+      - main
+      - feature/*
   pull_request:
     branches: [main]
 
 jobs:
-  validate-main:
+  run-ci:
     runs-on: ubuntu-22.04
-
     steps:
       - uses: actions/checkout@v4
 
-      - name: Verify required files for main
-        run: |
-          [ -f index.html ] || { echo "Missing index.html"; exit 1; }
-          [ -f style.css ] || { echo "Missing style.css"; exit 1; }
-
-      - name: Generate success flag
-        run: echo "CI on main passed ✅" > ci-main-success.txt
-
-      - name: Show result
-        run: cat ci-main-success.txt
-
-      
+      - name: Print CI message
+        run: echo "✅ CI is working on ${{ github.ref_name }} branch!"

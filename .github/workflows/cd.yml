@@ -1,23 +1,20 @@
-name: CD - Main
+name: Continuous Deployment
 
 on:
   workflow_run:
-    workflows: ["CI - Main"]
+    workflows: ["Continuous Integration"]
     types: [completed]
 
 jobs:
-  deploy-main:
+  deploy:
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-22.04
-
     steps:
       - uses: actions/checkout@v4
 
-      - name: Simulate deployment for main
+      - name: Simulate deployment
         run: |
-          echo "Deploying MAIN branch..."
-          echo "✅ Main deployment complete!" > deploy-main.log
-
-      - name: Show deployment log
-        run: cat deploy-main.log
-
+          echo "🚀 Deployment triggered for ${{ github.event.workflow_run.head_branch }}"
+          echo "✅ Deployment complete!"
+          echo "You can now access the deployed application at https://example.com/${{ github.event.workflow_run.head_branch }}"
+        
