@@ -17,4 +17,13 @@ jobs:
           echo "🚀 Deployment triggered for ${{ github.event.workflow_run.head_branch }}"
           echo "✅ Deployment complete Succesful!"
           echo "You can now access the deployed application at https://example.com/${{ github.event.workflow_run.head_branch }}"
+
+  run-cd:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Print CD message
+        run: echo "✅ CD is working on ${{ github.ref_name }} branch!"
+
         
