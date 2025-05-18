@@ -1,4 +1,5 @@
-name: CD - Feature Login
+name: Continuous Deployment- Feature Login
+# This workflow is triggered by the completion of the CI workflow for the feature/login branch.
 
 on:
   workflow_run:
