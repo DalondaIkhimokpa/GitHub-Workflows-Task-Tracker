@@ -1,4 +1,5 @@
 name: Feature CI (Login)
+
 on:
   push:
     branches: [feature/login]
@@ -6,7 +7,7 @@ on:
 
 jobs:
   verify:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v4
-      - run: echo \"✅ CI is working on feature/login\"" > .github/workflows/feature-ci.yml
+      - run: echo "CI is working on feature/login"
