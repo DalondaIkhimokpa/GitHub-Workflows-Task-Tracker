@@ -3,7 +3,11 @@ name: Hello Today Workflow
 # It prints a success message with the branch name.
 
 on:
-  push:
+  pull_request_target:
+    # This event is triggered when a pull request is opened or updated.
+    # It allows you to run workflows in the context of the base branch.
+    # The workflow will run in the context of the base branch, not the head branch.
+    # This is useful for security reasons, as it prevents running untrusted code from the head branch.
     branches: [feature/login]
   workflow_dispatch: # Allows manual triggering of the workflow
   pull_request:
@@ -13,4 +17,4 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - name: Print success message
-        run: 'echo "🎉 FINALLY WORKING! Branch: $GITHUB_REF_NAME"'
+        run: 'echo "🎉 FINALLY WORKING!"'
