@@ -1,17 +1,12 @@
 name: Feature CI (Login)
-
 on:
   push:
     branches: [feature/login]
   workflow_dispatch:
 
 jobs:
-  say-hello:
+  verify:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
-      - name: Print a message
-        run: |
-          echo "✅ This is CI on feature/login."
-          echo "Branch: ${{ github.ref_name }}"
+      - run: echo \"✅ CI is working on feature/login\"" > .github/workflows/feature-ci.yml
