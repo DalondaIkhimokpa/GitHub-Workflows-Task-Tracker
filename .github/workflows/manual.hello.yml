@@ -1,0 +1,20 @@
+name: Manual Hello Workflow
+
+on:
+  workflow_dispatch:
+    inputs:
+      username:
+        description: 'dalonda ikhimokpa'
+        required: true
+        default: 'Developer'
+
+jobs:
+  greet:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Greet user
+        run: |
+          echo "Hello, ${{ github.event.inputs.username }}!"
+          echo "This workflow was manually triggered."
+          echo "Current branch: main"
+          
