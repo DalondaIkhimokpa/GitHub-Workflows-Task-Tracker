@@ -1,4 +1,4 @@
-name: CI Demo
+name: Continous Integration 
 
 on: [push]  # Runs on any push
 

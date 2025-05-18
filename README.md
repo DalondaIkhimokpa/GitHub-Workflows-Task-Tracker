@@ -13,9 +13,10 @@ A simple web-based task management application with automated GitHub workflows a
 
 ##📀 Trask Tracker Demo Video
 
-➡️[click here] Demo Comming Soon
+➡️[click here] Demo Comming
 
 ## 🔐 Login Page
+
 ➡️[click here] http://127.0.0.1:3000/login.html
 
 ## ✨Features
@@ -61,17 +62,19 @@ Local Development Clone the repository
 - [Live Server Extension](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)
 
 ## 💻 Development Commands
+
    1.Command Action:
-   ```bash
+
+```bash
    git clone [url]
    Clone the repository
    open index.html
    Run locally (Mac)
-   git push origin main	
+   git push origin main
    Update remote repo
 
- ```
-  
+```
+
 ## 🌐 Accessing the App
 
 Once running, use the app by:
