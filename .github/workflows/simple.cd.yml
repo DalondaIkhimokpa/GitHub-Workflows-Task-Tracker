@@ -2,16 +2,17 @@ name: Simple CD
 
 on:
   workflow_run:
-    workflows: ["Simple CD"]
-    types: [completed]
+    workflows: ["Simple CI"]  # ✅ This should be the CI workflow name
+    types:
+      - completed
 
 jobs:
   run-cd:
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
 
       - name: Simulate deployment
         run: |
-          echo "✅ Deployment complete Succesful!"
-          
+          echo "✅ Deployment complete Successful!"
