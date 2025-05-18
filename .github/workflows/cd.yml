@@ -7,27 +7,28 @@ on:
       - completed
 
 jobs:
-  await-approval:
+  deploy:
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/github-script@v6
-        with:
-          script: |
-            github.rest.issues.createComment({
-              issue_number: context.issue.number,
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              body: "🚀 CI passed! A maintainer must approve this deployment:\n\n" +
-                    `https://github.com/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`
-            })
-      
       - uses: actions/checkout@v4
-      - run: echo "Simulating deployment..." > deploy.log
-      
-      - run: echo "Deployment completed successfully!" >> deploy.log
-      - run: echo "Deployment log:" >> deploy.log
-      - run: cat deploy.log
-        continue-on-error: true
-      - name: Notify Deployment Status
-        run: echo "Deployment status notification sent"
+
+      - name: Simulate deployment
+        run: |
+          echo "Deploying application..."
+          echo "Deployment complete ✅" > deploy.log
+
+      - name: Display deployment log
+        run: cat deploy.log
+
+      - name: Upload deployment log
+        uses: actions/upload-artifact@v3
+        with:
+          name: deployment-log
+          path: deploy.log
+      - name: Notify deployment success
+        run: |
+          echo "Deployment was successful! 🎉"
+          # Here you could add a step to notify a service like Slack, Discord, etc.
+          # For example:
+          # curl -X POST -H 'Content-type: application/json' --data '{"text":"Deployment was successful!"}' YOUR_WEBHOOK_URL
