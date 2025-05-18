@@ -1,20 +1,12 @@
 name: Hello Today Workflow
-# This workflow is triggered on pushes to the feature/login branch and can also be manually triggered.
-# It prints a success message with the branch name.
 
 on:
-  pull_request_target:
-    # This event is triggered when a pull request is opened or updated.
-    # It allows you to run workflows in the context of the base branch.
-    # The workflow will run in the context of the base branch, not the head branch.
-    # This is useful for security reasons, as it prevents running untrusted code from the head branch.
-    branches: [feature/login]
-  workflow_dispatch: # Allows manual triggering of the workflow
-  pull_request:
-    branches: [feature/login] # Triggers on pull requests to the feature/login branch    
+    workflow_dispatch:
+
 jobs:
-  test:
-    runs-on: ubuntu-22.04
-    steps:
-      - name: Print success message
-        run: 'echo "🎉 FINALLY WORKING!"'
+    print-hello-world:
+        runs-on: ubuntu-22.04
+        steps:
+            - name: Print Hello Today Test
+              run: echo "Hello, Today!"
+            
