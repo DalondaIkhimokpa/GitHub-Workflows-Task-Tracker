@@ -1,0 +1,17 @@
+name: Simple CI
+
+on:
+  push:
+    branches:
+      - feature/*
+  pull_request:
+    branches: [feature/*]
+
+jobs:
+  run-ci:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Print CI message
+        run: echo "✅ CI is working on ${{ github.ref_name }} branch!"
