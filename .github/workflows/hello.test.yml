@@ -1,4 +1,4 @@
-name: Hello World
+name: Hello Test
 on:
     workflow_dispatch:
 
@@ -6,6 +6,6 @@ jobs:
     print-hello-world:
         runs-on: ubuntu-22.04
         steps:
-            - name: Print Hello World
+            - name: Print Hello World Test
               run: echo "Hello, World!"
             
