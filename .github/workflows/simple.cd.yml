@@ -14,4 +14,3 @@ jobs:
       - name: Print CD message
         run: |
           echo "🚀 CD triggered because CI succeeded on branch: ${{ github.event.workflow_run.head_branch }}"
-      

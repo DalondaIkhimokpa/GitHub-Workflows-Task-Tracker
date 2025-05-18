@@ -1,6 +1,8 @@
 name: Simple CI
 
-on: [push]
+on:
+  push:
+    branches: [feature/login]
 
 jobs:
   say-hello:
